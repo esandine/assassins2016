@@ -1,0 +1,13 @@
+def importation(filename):
+    instream = open(filename, 'r') 
+    content = instream.readlines() 
+    instream.close()
+    for row in content:
+        row=row.strip('\n').rsplit(',',1)
+        dict[row[0]]=(float)(row[1])
+    return dict
+
+kills = importation("kills.csv");
+for user in kills.keys():
+    print "User: "+user " Kills: "+ kills[user]
+
