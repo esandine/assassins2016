@@ -23,7 +23,7 @@ def kill():
     file = open("leaderboard.csv","w")
     file.write(retstr)
     file.close()
-    #Loads Users into file
+    #Kills a player
     file = open("list.csv","r")
     list=file.read()
     file.close()
@@ -34,6 +34,7 @@ def kill():
     killer=h.hexdigest()
     for user in list:
         if killer == user:
-            killed=list.pop(list.index(user)+1)
+            if(index(user)=len(list)
+            Killed.Pop(list.index(user)+1)
     
 kill()
