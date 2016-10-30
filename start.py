@@ -12,7 +12,7 @@ def start():
         retstr+=names[i]
         retstr+=",0\n"
         i+=1
-    file = open("kills.csv",'w')
+    file = open("leaderboard.csv",'w')
     file.write(retstr)
     file.close()
     #randomizes the list

@@ -26,7 +26,7 @@ def sortDict(dict):
 def leaderboard():
     html = "<!DOCTYPEhtml><html> <head> <title> Assassins </title> </head> <body> <h1> Assassins Leaderboard </h1> "
     html+="<table border =1 width =600><thead> <tr> <th> Person </th> <th> Kills </th></tr></thead><tbody>"
-    kills = importation("kills.csv")
+    kills = importation("leaderboard.csv")
     ret=sortDict(kills)
     users=ret[0]
     kill=ret[1]

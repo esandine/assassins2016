@@ -1,0 +1,3 @@
+def kill():
+    killer = input("Who got a kill: ")
+    print killer
