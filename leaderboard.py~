@@ -10,30 +10,24 @@ def importation(filename):
 
 def sortDict(dict):
     max = -1
-    players = []
-    kills = []
-    while len(dict)>0:
+    newDict = {}
+    while len(dict) > 0:
         for user in dict.keys():
             if dict[user]>max:
                 currentuser = user
                 max = dict[user]
-        players.append(currentuser)
-        kills.append(max)
+        newDict[currentuser]=dict[currentuser]
         dict.pop(currentuser)
         max = -1
-        #print dict.keys()
-    return players,kills
+        print dict.keys()
+    return newDict
 def leaderboard():
     html = "<!DOCTYPEhtml><html> <head> <title> Assassins </title> </head> <body> <h1> Assassins Leaderboard </h1> "
     html+="<table border =1 width =600><thead> <tr> <th> Person </th> <th> Kills </th></tr></thead><tbody>"
     kills = importation("kills.csv")
-    ret=sortDict(kills)
-    users=ret[0]
-    kill=ret[1]
-    i=0
-    while i < len(users):
-        html+="<tr><td>"+users[i]+"</td><td>"+str(kill[i])+"</td></tr>"
-        i+=1;
+    kills=sortDict(kills)
+    for user in kills.keys():
+        html+="<tr><td>"+user+"</td><td>"+str(kills[user])+"</td></tr>"
     html+="</tbody></table></body></html>"
     file = open("index.html", 'w')
     file.write(html)
@@ -41,4 +35,3 @@ def leaderboard():
     return 0
 
 leaderboard()
-

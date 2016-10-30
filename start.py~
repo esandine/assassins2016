@@ -1,0 +1,8 @@
+import random
+def start():
+    instream = open(names.csv, 'r')
+    content = instream.readlines()
+    instream.close()
+    print content
+
+start()
